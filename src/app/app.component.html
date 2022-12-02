@@ -11,7 +11,7 @@
       <div class="field">
         <div class="control">
           <label class="checkbox">
-            <input (change)="onUseLettersChange()" type="checkbox" />
+            <input (change)="onUseLettersChange()" type="checkbox" [disabled]="!validInclude && !includeLetters"/>
             Use Letters
           </label>
         </div>
@@ -20,7 +20,16 @@
       <div class="field">
         <div class="control">
           <label class="checkbox">
-            <input (change)="onUseNumbersChange()" type="checkbox" />
+            <input (change)="onUseMayusChange()" type="checkbox" [disabled]="!validInclude && !includeMayus"/>
+            Use Capital Letters
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onUseNumbersChange()" type="checkbox" [disabled]="!validInclude && !includeNumbers"/>
             Use Numbers
           </label>
         </div>
@@ -29,7 +38,7 @@
       <div class="field">
         <div class="control">
           <label class="checkbox">
-            <input (change)="onUseSymbolsChange()" type="checkbox" />
+            <input (change)="onUseSymbolsChange()" type="checkbox" [disabled]="!validInclude && !includeSymbols"/>
             Use Symbols
           </label>
         </div>
